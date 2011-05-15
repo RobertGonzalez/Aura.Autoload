@@ -3,8 +3,8 @@ title: The Aura Autoload package provides a PSR-0 proposal compliant SPL autoloa
 layout: default
 ---
 
-Introduction
-============
+Aura Autoload
+=============
 
 The Aura Autoload package provides a [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal) compliant SPL autoloader implementation for PHP 5.3+.
 
