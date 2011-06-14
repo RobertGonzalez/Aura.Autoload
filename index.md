@@ -15,10 +15,10 @@ Include-Path Usage
 Create an instance of the `Loader` and register it with SPL.
 
     <?php
-    $loader = require '/path/to/aura.autoloader/scripts/instance.php';
+    $loader = require '/path/to/Aura.Autoload/scripts/instance.php';
     $loader->register();
 
-The `Loader` will now look for PSR-0 compliant class names in the include-path, and throw an `Exception_NotFound` if it cannot find one.
+The `Loader` will now look for PSR-0 compliant class names in the include-path, and throw an `Exception\NotFound` if it cannot find one.
 
 
 Class Prefix Usage
