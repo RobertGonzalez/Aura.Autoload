@@ -31,11 +31,11 @@ You can tell the `Loader` to search particular paths for classes with specific p
     $loader->addPrefix('Vendor_', '/path/to/zf/lib/Zend');
     
     // look for vendor\package classes in this path:
-    $loader->addPrefix('vendor\package\\', '/path/to/vendor.package/src');
+    $loader->addPrefix('Vendor\Package\\', '/path/to/Vendor.Package/src');
     
-    // additionally, e.g. in testing modes, also look for vendor\package
+    // additionally, e.g. in testing modes, also look for Vendor\Package
     // classes in this path as well:
-    $loader->addPrefix('vendor\package\\', '/path/to/vendor.package/tests');
+    $loader->addPrefix('Vendor\Package\\', '/path/to/Vendor.Package/tests');
 
 (Note that you should end formal namespace prefixes with a double-backslash, not a single backslash.)
 
