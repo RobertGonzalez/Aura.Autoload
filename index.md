@@ -45,10 +45,10 @@ If the `Loader` cannot find a class in the explicit paths for the specific prefi
 Exact Class Usage
 =================
 
-You can tell the `Loader` where a specific individual class is located using the `addClass()` method.
+You can tell the `Loader` where a specific individual class is located using the `setClass()` method.
 
     <?php
     // look for the VendorClassName at this location:
-    $loader->addClass('VendorClassName', '/path/to/VendorClassName.php');
+    $loader->setClass('VendorClassName', '/path/to/VendorClassName.php');
 
 This allows you to build relatively fast lookup maps of class names to file names.
