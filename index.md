@@ -1,5 +1,5 @@
 ---
-title: The Aura Autoload package provides a PSR-0 proposal compliant SPL autoloader implementation for PHP 5.3
+title: The Aura.Autoload Package
 layout: default
 ---
 
@@ -28,9 +28,9 @@ You can tell the `Loader` to search particular paths for classes with specific p
     
     <?php
     // look for all Vendor_* classes in this path:
-    $loader->addPrefix('Vendor_', '/path/to/zf/lib/Zend');
+    $loader->addPrefix('Vendor_', '/path/to/lib');
     
-    // look for vendor\package classes in this path:
+    // look for Vendor\Package classes in this path:
     $loader->addPrefix('Vendor\Package\\', '/path/to/Vendor.Package/src');
     
     // additionally, e.g. in testing modes, also look for Vendor\Package
@@ -41,6 +41,17 @@ You can tell the `Loader` to search particular paths for classes with specific p
 
 If the `Loader` cannot find a class in the explicit paths for the specific prefix given, it will fall back to looking in the include-path.
 
+Note that the path should point to the top of a PSR-0 compliant directory structure.  For example, this ...
+
+    $loader->addPrefix('Vendor\Package\\', '/path/to/Vendor.Package/src');
+
+... assumes a directory structure like this:
+
+    Vendor.Package/
+        src/
+            Vendor/
+                Package/
+                    Class.php
 
 Exact Class Usage
 =================
@@ -52,3 +63,6 @@ You can tell the `Loader` where a specific individual class is located using the
     $loader->addClass('VendorClassName', '/path/to/VendorClassName.php');
 
 This allows you to build relatively fast lookup maps of class names to file names.
+
+You can also set all classes at once using the `setClasses()` method:
+
