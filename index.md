@@ -60,9 +60,16 @@ You can tell the `Loader` where a specific individual class is located using the
 
     <?php
     // look for the VendorClassName at this location:
-    $loader->addClass('VendorClassName', '/path/to/VendorClassName.php');
+    $loader->setClass('VendorClassName', '/path/to/VendorClassName.php');
 
 This allows you to build relatively fast lookup maps of class names to file names.
 
 You can also set all classes at once using the `setClasses()` method:
+
+    <?php
+    $loader->setClasses(array(
+        'Vendor\Package\Foo' => '/path/to/Vendor/Package/Foo.php',
+        'Vendor\Package\Bar' => '/path/to/Vendor/Package/Bar.php',
+        'Vendor\Package\Zim' => '/path/to/Vendor/Package/Zim.php',
+    ));
 
