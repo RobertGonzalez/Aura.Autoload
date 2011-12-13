@@ -56,7 +56,7 @@ Note that the path should point to the top of a PSR-0 compliant directory struct
 Exact Class Usage
 =================
 
-You can tell the `Loader` where a specific individual class is located using the `addClass()` method.
+You can tell the `Loader` where a specific individual class is located using the `setClass()` method.
 
     <?php
     // look for the VendorClassName at this location:
