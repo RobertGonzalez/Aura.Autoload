@@ -28,14 +28,14 @@ You can tell the `Loader` to search particular paths for classes with specific p
     
     <?php
     // look for all Vendor_* classes in this path:
-    $loader->addPrefix('Vendor_', '/path/to/lib');
+    $loader->add('Vendor_', '/path/to/lib');
     
     // look for Vendor\Package classes in this path:
-    $loader->addPrefix('Vendor\Package\\', '/path/to/Vendor.Package/src');
+    $loader->add('Vendor\Package\\', '/path/to/Vendor.Package/src');
     
     // additionally, e.g. in testing modes, also look for Vendor\Package
     // classes in this path as well:
-    $loader->addPrefix('Vendor\Package\\', '/path/to/Vendor.Package/tests');
+    $loader->add('Vendor\Package\\', '/path/to/Vendor.Package/tests');
 
 (Note that you should end formal namespace prefixes with a double-backslash, not a single backslash.)
 
@@ -43,7 +43,7 @@ If the `Loader` cannot find a class in the explicit paths for the specific prefi
 
 Note that the path should point to the top of a PSR-0 compliant directory structure.  For example, this ...
 
-    $loader->addPrefix('Vendor\Package\\', '/path/to/Vendor.Package/src');
+    $loader->add('Vendor\Package\\', '/path/to/Vendor.Package/src');
 
 ... assumes a directory structure like this:
 
