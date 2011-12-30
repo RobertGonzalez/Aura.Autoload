@@ -1,5 +1,5 @@
 ---
-title: Aura for PHP: PSR-0 Autoloader
+title: Aura for PHP; PSR-0 Autoloader
 layout: default
 ---
 
