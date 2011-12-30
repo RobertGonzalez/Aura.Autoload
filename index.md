@@ -1,5 +1,5 @@
 ---
-title: Aura for PHP; PSR-0 Autoloader
+title: Aura for PHP, PSR-0 Autoloader
 layout: default
 ---
 
@@ -18,7 +18,7 @@ Create an instance of the `Loader` and register it with SPL.
     $loader = require '/path/to/Aura.Autoload/scripts/instance.php';
     $loader->register();
 
-The `Loader` will now look for PSR-0 compliant class names in the include-path, and throw an `Exception\NotFound` if it cannot find one.
+The `Loader` will now look for PSR-0 compliant class names in the include-path, and throw an `Exception\NotDeclared` if it cannot find one.
 
 
 Class Prefix Usage
@@ -52,6 +52,13 @@ Note that the path should point to the top of a PSR-0 compliant directory struct
             Vendor/
                 Package/
                     Class.php
+
+You can also pass the paths as an array. See one is `Aura\Router` and other `Aura\Di` are different components.
+
+    $loader->add('Aura\\' => array(
+        '/path/to/project/Aura.Router/src/',
+        '/path/to/project/Aura.Di/src/',
+    ));
 
 Exact Class Usage
 =================
