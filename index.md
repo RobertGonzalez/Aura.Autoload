@@ -6,7 +6,7 @@ layout: default
 Aura Autoload
 =============
 
-The Aura Autoload package provides a [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal) compliant SPL autoloader implementation for PHP 5.3+.
+The Aura Autoload package provides a [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal) compliant SPL autoloader implementation for PHP. It also matches the interface proposed at <https://wiki.php.net/rfc/splclassloader>.
 
 
 Include-Path Usage
@@ -53,12 +53,12 @@ Note that the path should point to the top of a PSR-0 compliant directory struct
                 Package/
                     Class.php
 
-You can also pass the paths as an array. See one is `Aura\Router` and other `Aura\Di` are different components.
+You can also set all paths at once as an array.
 
-    $loader->add('Aura\\' => array(
-        '/path/to/project/Aura.Router/src/',
-        '/path/to/project/Aura.Di/src/',
-    ));
+    $loader->setPaths([
+        'Aura\Router\\' => '/path/to/project/Aura.Router/src/',
+        'Aura\Di\\'     => '/path/to/project/Aura.Di/src/',
+    ]);
 
 Exact Class Usage
 =================
@@ -74,9 +74,10 @@ This allows you to build relatively fast lookup maps of class names to file name
 You can also set all classes at once using the `setClasses()` method:
 
     <?php
-    $loader->setClasses(array(
+    $loader->setClasses([
         'Vendor\Package\Foo' => '/path/to/Vendor/Package/Foo.php',
         'Vendor\Package\Bar' => '/path/to/Vendor/Package/Bar.php',
         'Vendor\Package\Zim' => '/path/to/Vendor/Package/Zim.php',
-    ));
+    ]);
 
+* * *
